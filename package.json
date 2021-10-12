@@ -1,0 +1,19 @@
+{
+  "name": "interviewbit-in",
+  "version": "1.0.0",
+  "description": "An attempt at getting better at javascript with Competitive Coding in js. Problems taken from https://www.interviewbit.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumdook/interviewbit-in-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumdook/interviewbit-in-js/issues"
+  },
+  "homepage": "https://github.com/sumdook/interviewbit-in-js#readme"
+}
