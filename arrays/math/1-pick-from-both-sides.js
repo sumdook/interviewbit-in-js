@@ -1,12 +1,12 @@
 function pickFromBothSides(A, B) {
-  let maxSum = 0;
+  let baseSum = 0;
   for (let i = 0; i < B; i++) {
-    maxSum += A[i];
+    baseSum += A[i];
   }
-  let baseSum = maxSum;
+  let maxSum = baseSum;
   for (i = 0; i < B; i++) {
     baseSum = baseSum - A[B - 1 - i] + A[A.length - 1 - i];
-    if (baseSum > maxSum) maxSum = baseSum;
+    maxSum = Math.max(baseSum, maxSum);
   }
   return maxSum;
 }

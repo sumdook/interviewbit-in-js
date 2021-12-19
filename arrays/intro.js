@@ -124,3 +124,54 @@ function spiralOrder(a) {
 }
 
 console.log(spiralOrder([[1, 2, 3]]));
+
+// Max Non Negative Subarray
+
+function maxNonNegSubArray(A) {
+  let ans = [];
+  let maxSum = 0;
+  let current = [];
+  let currentSum = 0;
+  for (let i = 0; i < A.length; i++) {
+    if (A[i] >= 0) {
+      current.push(A[i]);
+      currentSum += A[i];
+    } else {
+      if (currentSum > maxSum) {
+        maxSum = currentSum;
+        ans = current;
+      }
+      if (currentSum === maxSum) {
+        if (current.length > ans.length) {
+          maxSum = currentSum;
+          ans = current;
+        }
+      }
+      current = [];
+      currentSum = 0;
+    }
+  }
+  if (currentSum > maxSum) {
+    maxSum = currentSum;
+    ans = current;
+  }
+  if (currentSum === maxSum) {
+    if (current.length > ans.length) {
+      maxSum = currentSum;
+      ans = current;
+    }
+  }
+  return ans;
+}
+
+console.log({ maxNonNegSubArray: maxNonNegSubArray([0, 0, -1, 0]) });
+
+function largeFactorial(N) {
+  if (N === 1 || N === 0) return "1";
+  let n = BigInt(N);
+  let ans = 1n;
+  for (let i = 0n; i < n; i++) {
+    ans *= n - i;
+  }
+  return ans.toString();
+}
